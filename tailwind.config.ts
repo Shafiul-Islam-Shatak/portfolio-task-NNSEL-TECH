@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        syne: ['var(--font-syneFont)', 'sans-serif'],
+        rubik: ['var(--font-rubik)', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

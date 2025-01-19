@@ -29,13 +29,18 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body
-        className={`${syneFont.variable} ${rubikFont.variable} antialiased`}
+        className={`${syneFont.variable} ${rubikFont.variable} antialiased bg-[#262A2C] text-white`}
       >
-        <Navbar />
-        <main>
+        <div className="max-w-[1145px] mx-auto">
+          <Navbar />
+        </div>
+        <main className="max-w-[1140px] mx-auto">
           {children}
         </main>
-        <Footer />
+        <div className="max-w-[1145px] mx-auto">
+          <Footer />
+        </div>
+
       </body>
     </html>
   );
