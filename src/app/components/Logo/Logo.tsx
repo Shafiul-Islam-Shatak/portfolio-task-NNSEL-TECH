@@ -1,6 +1,5 @@
-import logo from'../../../public/assets/Brand-logo.svg'
 import Image from 'next/image'
-
+import logo from'../../../../public/assets/Brand-logo.svg'
 const Logo = () => {
     return (
         <div>

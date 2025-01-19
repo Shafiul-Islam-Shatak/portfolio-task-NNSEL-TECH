@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Syne, Rubik } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/Components/Navbar/Navbar";
-import Footer from "@/Components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 const syneFont = Syne({
   variable: "--font-syneFont",
@@ -24,14 +24,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
   return (
-    <html lang="en" >
+    <html lang="en">
       <body
         className={`${syneFont.variable} ${rubikFont.variable} antialiased bg-[#262A2C] text-white`}
       >
-        <div className="max-w-[1145px] mx-auto">
+       <div className="max-w-[1145px] mx-auto">
           <Navbar />
         </div>
         <main className="max-w-[1140px] mx-auto">
@@ -40,7 +38,6 @@ export default function RootLayout({
         <div className="max-w-[1145px] mx-auto">
           <Footer />
         </div>
-
       </body>
     </html>
   );

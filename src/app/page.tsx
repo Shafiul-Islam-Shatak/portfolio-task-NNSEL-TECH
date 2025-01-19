@@ -1,9 +1,11 @@
-import Banner from "@/Components/Banner/Banner";
+import Banner from "./components/Banner/Banner";
+import HeroSection from "./components/HeroSection/HeroSection";
 
 export default function Home() {
   return (
     <main>
-      <Banner/>
+      <Banner />
+      <HeroSection />
     </main>
   );
 }
