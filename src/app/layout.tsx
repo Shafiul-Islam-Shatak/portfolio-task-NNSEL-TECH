@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Syne, Rubik } from "next/font/google";
+import { Syne, Rubik ,Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
 const syneFont = Syne({
   variable: "--font-syneFont",
+  subsets: ["latin"],
+});
+const interFont = Inter({
+  variable: "--font-interFont",
   subsets: ["latin"],
 });
 
@@ -27,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syneFont.variable} ${rubikFont.variable} antialiased bg-[#262A2C] text-white`}
+        className={`${syneFont.variable} ${rubikFont.variable} ${interFont.variable} antialiased bg-[#262A2C] text-white`}
       >
        <div className="max-w-[1145px] mx-auto">
           <Navbar />

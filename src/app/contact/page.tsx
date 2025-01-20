@@ -48,8 +48,10 @@ const contact = () => {
                     src={laptop}
                     alt="laptop-pic" />
 
-           <div className="font-bold text-2xl font-syne">
+           <div className="font-bold text-2xl font-syne w-3/4 mx-auto grid grid-cols-2 lg:grid-cols-3 gap-3 text-center">
             <h1>Street Avenue 21, CA</h1>
+            <h1>+9 0283353</h1>
+            <h1 className="underline">info@aaronn.com</h1>
            </div>
         </div>
     );

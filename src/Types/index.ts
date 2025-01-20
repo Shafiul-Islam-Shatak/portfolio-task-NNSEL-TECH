@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 
 export type NavIteam = {
     title : string;
@@ -17,3 +18,10 @@ export type SectionHeaderProps = {
     desciption : string;
 }
 
+
+export type WorkCardProps = { 
+    img: StaticImageData; 
+    title: string; 
+    color: string; 
+   
+}

@@ -16,7 +16,7 @@ const Navbar = () => {
         },
         {
             title: 'my works',
-            path: '/myWorks'
+            path: '/works'
         }
     ]
 

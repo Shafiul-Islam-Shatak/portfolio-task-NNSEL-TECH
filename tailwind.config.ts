@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         syne: ['var(--font-syneFont)', 'sans-serif'],
         rubik: ['var(--font-rubik)', 'sans-serif'],
+        inter: ['var(--font-interFont)', 'sans-serif'],
       },
     },
   },
