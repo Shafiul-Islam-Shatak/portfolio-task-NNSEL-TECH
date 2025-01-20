@@ -35,7 +35,7 @@ export default function RootLayout({
         <main className="max-w-[1140px] mx-auto">
           {children}
         </main>
-        <div className="max-w-[1145px] mx-auto">
+        <div className=" bg-black">
           <Footer />
         </div>
       </body>
