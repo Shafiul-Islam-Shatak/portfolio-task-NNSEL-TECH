@@ -36,9 +36,11 @@ const ProjectsHighlight = () => {
                         My Projects Highlight
                     </h1>
                 </div>
-                <div className='absolute  top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2'>
+                <div className='absolute  top-1/2 left-1/2 transform translate-x-11/12 -translate-y-[60%]'>
                     <Image
                         src={cloudShadow}
+                        width={500}
+                        height={500}
                         alt='shadow'
                     />
                 </div>
@@ -48,7 +50,7 @@ const ProjectsHighlight = () => {
                 </button>
             </div>
 
-            <div className='grid grid-cols-2'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-9 '>
                 {
                     projectsList?.map(project =>
                         <ProjectsHighlightCard

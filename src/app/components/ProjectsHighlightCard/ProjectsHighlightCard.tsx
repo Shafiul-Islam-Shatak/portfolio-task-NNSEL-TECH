@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const ProjectsHighlightCard = ({project} :{project:ProjectsHighlightProps}) => {
     return (
-        <div>
+        <div className='mb-[94px] mx-auto'>
             <Image
             src={project?.img}
             width={560}
@@ -13,7 +13,15 @@ const ProjectsHighlightCard = ({project} :{project:ProjectsHighlightProps}) => {
 
             <div>
                 <h1 className='font-syne font-semibold text-2xl my-[32px]'>{project.title}</h1>
-                <p><span className='text-[#606060]'>Client:</span> &nbsp; {project.client}</p>
+                <p className='font-rubik'><span className='text-[#606060]'>Client:</span> &nbsp; {project.client}</p>
+
+                <p className='font-rubik'><span className='text-[#606060]'>Work:</span> &nbsp; 
+                {
+                    project?.work.map(txt=>
+                        <span key={txt} className=''>&nbsp; {txt}</span>
+                    )
+                }
+                </p>
                 
             </div>
         </div>

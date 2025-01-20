@@ -11,9 +11,11 @@ const Banner = () => {
                         Adaptive Logo Design<br />for Your Brand
                     </h1>
                 </div>
-                <div className='absolute  top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2'>
+                <div className='absolute  top-1/2 left-1/2 transform translate-x-11/12 -translate-y-1/2'>
                     <Image
                         src={cloudShadow}
+                        width={500}
+                        height={500}
                         alt='shadow'
                     />
                 </div>
