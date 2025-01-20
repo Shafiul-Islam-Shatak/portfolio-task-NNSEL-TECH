@@ -26,3 +26,12 @@ export type WorkCardProps = {
     color: string;
 
 }
+
+export type Projcet = {
+    title: string,
+    img: string
+}
+
+export type ProjcetDetailsProps = {
+    params:  { id: string }
+}

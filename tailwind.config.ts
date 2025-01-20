@@ -12,6 +12,7 @@ export default {
         syne: ['var(--font-syneFont)', 'sans-serif'],
         rubik: ['var(--font-rubik)', 'sans-serif'],
         inter: ['var(--font-interFont)', 'sans-serif'],
+        sora: ['var(--font-soraFont)', 'sans-serif'],
       },
     },
   },
