@@ -1,37 +1,33 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import cloudShadow from '../../../../public/assets/Vector 8.svg'
-import { ProjectsHighlightProps } from '@/Types';
 import ProjectsHighlightCard from '../ProjectsHighlightCard/ProjectsHighlightCard';
 import { GoArrowRight } from 'react-icons/go';
+import axios from 'axios';
+import { ProjectsHighlightProps } from '@/Types';
+
 
 const ProjectsHighlight = () => {
-    const projectsList: ProjectsHighlightProps[] = [
-        {
-            title: 'Brand Journey Improvements',
-            img: 'https://i.ibb.co/F7N9wXz/Img.png',
-            client: 'Organc',
-            work: ['Branding', 'Logo design']
-        },
-        {
-            title: 'Brand Grouping',
-            img: 'https://i.ibb.co/BrHRNCD/Paste-Img-Here.png',
-            client: 'FR',
-            work: ['Branding', 'Logo design']
-        },
-        {
-            title: 'NFT Glimps',
-            img: 'https://i.ibb.co/5Kvtd0b/Paste-Img-Here-1.png',
-            client: 'Rumanda',
-            work: ['NFT Design']
-        },
-        {
-            title: 'Brand Suggestions',
-            img: 'https://i.ibb.co/K0jhCcD/Paste-Img-Here-2.png',
-            client: 'T3d',
-            work: ['NFT logo']
-        },
-    ]
+    const [projectsList, setProjectsList] = useState<ProjectsHighlightProps[]>([])
+   
+    // load the data from DB
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get('/api/projects');
+                const data = res.data;
+                setProjectsList(data?.data) //set loaded data to state
+                
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        
+        fetchData();
+    }, [])
+    
     return (
         <div>
             <div className='relative mt-[270px]'>
@@ -54,7 +50,7 @@ const ProjectsHighlight = () => {
 
             <div className='grid grid-cols-2'>
                 {
-                    projectsList.map(project =>
+                    projectsList?.map(project =>
                         <ProjectsHighlightCard
                             key={project.title}
                             project={project}
