@@ -1,8 +1,7 @@
 import React from 'react';
 
 // react icons
-import { CgFacebook } from "react-icons/cg";
-import { BsInstagram, BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
+import { BsInstagram,  BsTwitter, BsFacebook } from "react-icons/bs";
 import logo from '../../../../public/assets/Brand-logo.svg'
 import Image from 'next/image'
 

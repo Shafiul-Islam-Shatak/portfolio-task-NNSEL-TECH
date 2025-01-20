@@ -12,3 +12,8 @@ export type ProjectsHighlightProps = {
 
 }
 
+export type SectionHeaderProps = {
+    title : string;
+    desciption : string;
+}
+
