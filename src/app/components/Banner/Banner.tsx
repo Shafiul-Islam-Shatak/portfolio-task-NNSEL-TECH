@@ -14,6 +14,7 @@ const Banner = () => {
                 </div>
                 <div className='absolute  top-1/2 left-1/2 transform translate-x-11/12 -translate-y-1/2'>
                     <Image
+                    className='hidden lg:block '
                         src={cloudShadow}
                         width={500}
                         height={500}

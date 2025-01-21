@@ -5,10 +5,11 @@ const Testimonial = () => {
     return (
         <div className='w-3/4 mx-auto xl:w-full '>
             <div className=" relative  flex justify-between items-center ">
-                <div className="lg:mt-[166px] mt-32">
+                <div className="lg:mt-[166px] mt-20">
                     <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold font-syne ">Testimonial</h1>
                     <div className='absolute  top-1/2 left-1/2 transform -translate-x-[140%] -translate-y-[60%]'>
                     <Image
+                    className='hidden lg:block '
                         src={cloudShadow}
                         width={500}
                         height={500}

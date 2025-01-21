@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image'
 import cloudShadow from '../../../../public/assets/Vector 8.svg'
 import profileImage from '../../../../public/assets/Rectangle 361.png'
+import eclipse from '../../../../public/Rectangle 362.png';
 const HeroSection = () => {
 
     return (
@@ -14,6 +15,7 @@ const HeroSection = () => {
                     <p className="text-[18px] mt-[26px] font-rubik text-[#A8A8A8]">Aaronn is a New York-based visual designer focusing on branding and visual identity. Her portfolio showcases her wide range of work, spanning books, posters and web design.</p>
                     <div className='absolute  top-1/2 left-1/2 transform -translate-x-[140%] -translate-y-[120%]'>
                         <Image
+                        className='hidden lg:block '
                             src={cloudShadow}
                             width={500}
                             height={500}
@@ -29,10 +31,20 @@ const HeroSection = () => {
                 </div>
 
                 {/* image */}
-                <div className="w-3/4 mx-auto lg:w-[50%]">
+                <div className="w-3/4 mx-auto lg:w-[50%] relative">
                     <Image
                         src={profileImage}
                         alt="profile-Image"
+                    />
+                    <Image
+                    className='absolute hidden lg:block  bottom-14 -left-10'
+                    src={eclipse}
+                    alt='eclipse'
+                    />
+                    <Image
+                    className='absolute hidden lg:block  rotate-90 -top-24 right-44'
+                    src={eclipse}
+                    alt='eclipse'
                     />
                 </div>
             </header>

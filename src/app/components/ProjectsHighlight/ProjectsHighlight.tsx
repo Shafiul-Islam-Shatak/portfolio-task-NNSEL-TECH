@@ -6,7 +6,6 @@ import { GoArrowRight } from 'react-icons/go';
 import { RingLoader } from 'react-spinners';
 import useProjects from 'Hooks/ProjectData/useProjects';
 import React from 'react';
-import { ProjectsHighlightProps } from '@/Types';
 
 
 const ProjectsHighlight = () => {
@@ -27,7 +26,7 @@ const ProjectsHighlight = () => {
                             </div>
                             <div className='absolute  top-1/2 left-1/2 transform translate-x-11/12 -translate-y-[60%]'>
                                 <Image
-                                    className='sticky'
+                                    className='hidden lg:block '
                                     src={cloudShadow}
                                     width={500}
                                     height={500}
