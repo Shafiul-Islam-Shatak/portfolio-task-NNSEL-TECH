@@ -23,8 +23,8 @@ const Banner = () => {
             </div>
 
             <Link href={'/works'}>
-                <button className='flex items-center justify-center space-x-2 bg-[#FF9142] hover:bg-orange-500 text-white py-4 px-10 rounded-[30px] mx-auto mt-[93px] '>
-                    <h1>Expolore Works</h1>
+                <button className='flex items-center uppercase  justify-center space-x-2 bg-[#FF9142] hover:bg-orange-500 text-white py-4 px-10 rounded-[30px] mx-auto mt-[93px] '>
+                    <h1>Explore Works</h1>
                     <GoArrowRight />
                 </button>
             </Link>

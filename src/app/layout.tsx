@@ -3,6 +3,7 @@ import { Syne, Rubik ,Inter , Sora } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 const syneFont = Syne({
   variable: "--font-syneFont",
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body
         className={`${syneFont.variable} ${rubikFont.variable} ${interFont.variable} ${soraFont.variable} antialiased bg-[#262A2C] text-white`}
       >
+        <Toaster/>
        <div className="max-w-[1145px] mx-auto">
           <Navbar />
         </div>

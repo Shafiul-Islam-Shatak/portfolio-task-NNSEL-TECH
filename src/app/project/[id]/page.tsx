@@ -1,5 +1,4 @@
 'use client';
-
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -10,20 +9,24 @@ import projectImg2 from "../../../../public//Rectangle 6473.png";
 import projectImg3 from "../../../../public/Rectangle 6474.png";
 import arrowRight from "../../../../public/Arrow right.png";
 import arrowLeft from "../../../../public/Arrow left.png";
-
-
-import { Projcet, ProjcetDetailsProps } from "@/Types";
+import { ParamsProps, Projcet, } from "@/Types";
 import OtherProjects from "@/app/components/OtherProjects/OtherProjects";
+
+interface ProjcetDetailsProps {
+    params: ParamsProps
+}
 
 const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
 
-    const projectId = params?.id;
+    const { id: projectId } = React.use(params);
+    console.log( params)
 
     const [projectData, setProjectData] = useState<Projcet | null>(null);
 
     // Load the data from the database
     useEffect(() => {
         const fetchData = async () => {
+
             try {
                 const res = await axios.get(`/api/projects/${projectId}`);
                 setProjectData(res?.data?.data); // Set loaded data to state
@@ -31,11 +34,9 @@ const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
                 console.error("Error fetching data:", error);
             }
         };
+        fetchData();
 
-        if (projectId) {
-            fetchData();
-        }
-    }, [projectId]);
+    }, []);
 
     return (
         <div>
@@ -68,11 +69,11 @@ const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
 
                     <div className="grid  grid-cols-1 gap-7 lg:grid-cols-2 mt-[88px]">
                         <Image
-                        className="mx-auto"
+                            className="mx-auto"
                             src={projectImg2}
                             alt={projectData.title} />
                         <Image
-                        className="mx-auto"
+                            className="mx-auto"
                             src={projectImg3}
                             alt={projectData.title} />
                     </div>

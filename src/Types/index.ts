@@ -32,6 +32,6 @@ export type Projcet = {
     img: string
 }
 
-export type ProjcetDetailsProps = {
-    params:  { id: string }
+export type ParamsProps = {
+  params :object
 }
