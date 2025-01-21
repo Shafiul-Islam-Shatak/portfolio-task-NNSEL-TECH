@@ -39,7 +39,10 @@ This project is a portfolio web application built using modern technologies. It 
    yarn install
    ```
 4. **Add .env file in the project directory (It wil be better if you use Own DB)**
+  ```bash
 MONGODB_URI=mongodb+srv://NeedsCart:O8Kux5G6YZqIhDLI@cluster0.eugjqa9.mongodb.net/portfolioTask?retryWrites=true&w=majority
+ 
+   ```
 
 5. **Start the project localy**
    ```bash
@@ -83,4 +86,8 @@ Also used  APIs to handle CRUD operation by id
 ### 1. **GET `/api/projects/${projectId}`**
 ### 2. **DELETE `/api/projects/${projectId}`**
 ### 3. **PATCH `/api/projects/${id}`**
+
+
+### YOU will get a UI like this PDF
+[PDF](https://drive.google.com/file/d/1S8uLYbyNZJz1MQxnlkRHTZHn_AYdH4zo/view?usp=sharing)
 
