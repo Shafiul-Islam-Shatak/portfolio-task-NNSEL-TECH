@@ -12,7 +12,7 @@ import { RingLoader } from "react-spinners";
 
 const Dashboard: React.FC = () => {
     // load data from custom hooks
-    const projects = useProjects() || [];
+    const [projectsList, refetch] = useProjects()
 
     // add project modal controll state
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -36,7 +36,8 @@ const Dashboard: React.FC = () => {
                     const res = await axios.delete(`/api/deleteProject/${id}`);
                     console.log(res.data)
                     toast.success("Project Deleted");
-                   
+                    refetch()
+
                 } catch (err) {
                     console.log(err);
                 }
@@ -45,11 +46,17 @@ const Dashboard: React.FC = () => {
     };
     // controll open and close the add project modal
     const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const closeModal = () => {
+        setIsModalOpen(false)
+        refetch()
+    }
 
     // controll open and close the edit project modal
     const openEditModal = () => setIsEditModalOpen(true);
-    const closeEditModal = () => setIsEditModalOpen(false);
+    const closeEditModal = () => {
+        refetch()
+        setIsEditModalOpen(false);
+    }
 
     return (
         <div>
@@ -76,8 +83,8 @@ const Dashboard: React.FC = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {projects.length > 0 ? (
-                        projects.map((project, index) => (
+                    {projectsList?.length > 0 ? (
+                        projectsList?.map((project, index) => (
                             <tr key={project._id} className="hover:bg-slate-600">
                                 <td className="pl-5">{index + 1}</td>
                                 <td className="py-2">
@@ -109,7 +116,7 @@ const Dashboard: React.FC = () => {
                     ) : (
                         <tr>
                             <td colSpan={5} className="text-center py-5">
-                                {projects.length === 0 ? (
+                                {projectsList?.length === 0 ? (
                                     <div>No Projects Found</div>
                                 ) :
                                     (

@@ -5,11 +5,13 @@ import ProjectsHighlightCard from '../ProjectsHighlightCard/ProjectsHighlightCar
 import { GoArrowRight } from 'react-icons/go';
 import { RingLoader } from 'react-spinners';
 import useProjects from 'Hooks/ProjectData/useProjects';
+import React from 'react';
+import { ProjectsHighlightProps } from '@/Types';
 
 
 const ProjectsHighlight = () => {
-    const  projectsList  = useProjects()
-
+    const [projectsList , refetch] = useProjects()
+  
 
     return (
         <div className=''>

@@ -1,4 +1,4 @@
-import { EditModalProps} from "@/Types";
+import { EditModalProps } from "@/Types";
 import axios from "axios";
 import useProjects from "Hooks/ProjectData/useProjects";
 import toast from "react-hot-toast";
@@ -7,10 +7,10 @@ import { RxCross1 } from "react-icons/rx";
 
 
 const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, id }) => {
-    const allProjects = useProjects()
+    const [projectsList, refetch] = useProjects()
 
     // find cliced project to edit
-    const projectData = allProjects.find(project => project._id === id)
+    const projectData = projectsList?.find(project => project._id === id)
 
 
     const handelUpdateProject = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -22,8 +22,9 @@ const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, id }) => {
         const project = { title, img, client }
         const res = await axios.patch(`/api/updateProject/${id}`, project)
         // console.log(res.data)
-        toast.success(res.data.massage)
-        onClose()
+        toast.success(res.data.massage);
+        refetch();
+        onClose();
     }
 
     return (

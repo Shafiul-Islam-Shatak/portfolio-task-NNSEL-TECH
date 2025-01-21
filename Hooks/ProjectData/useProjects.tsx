@@ -2,9 +2,10 @@ import { ProjectsHighlightProps } from "@/Types";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useProjects = () => {
+const useProjects = (): [ProjectsHighlightProps[] , ()=>void] => {
     const [projectsList, setProjectsList] = useState<ProjectsHighlightProps[]>([])
-    
+    const [refetchTrigger, setRefetchTrigger] = useState<boolean>(false);
+
     // load the data from DB
     useEffect(() => {
         const fetchData = async () => {
@@ -18,9 +19,13 @@ const useProjects = () => {
         };
 
         fetchData();
-    }, [])
+    }, [refetchTrigger])
 
-    return projectsList;
+
+    const refetch = () => setRefetchTrigger((prev) => !prev);
+    console.log(projectsList)
+
+    return [projectsList , refetch];
 };
 
 export default useProjects;

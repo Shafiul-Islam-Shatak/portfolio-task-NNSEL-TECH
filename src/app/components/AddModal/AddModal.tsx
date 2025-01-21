@@ -1,5 +1,6 @@
 import { AddModalProps } from "@/Types";
 import axios from "axios";
+import useProjects from "Hooks/ProjectData/useProjects";
 import React from "react";
 import toast from "react-hot-toast";
 import { RxCross1 } from "react-icons/rx";
@@ -7,6 +8,7 @@ import { RxCross1 } from "react-icons/rx";
 
 
 const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose }) => {
+    const [projectsList , refetch] = useProjects()
     const handelAddProject = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         const form = event.currentTarget
@@ -18,6 +20,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose }) => {
         toast.success(res.data.massage)
         onClose()
         form.reset()
+        refetch()
     }
 
     return (
