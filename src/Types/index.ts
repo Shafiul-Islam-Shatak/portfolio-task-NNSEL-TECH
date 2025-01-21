@@ -32,6 +32,18 @@ export type Projcet = {
     img: string
 }
 
-export type ParamsProps = {
-  params :object
+
+export type ProjcetDetailsProps= {
+    params: {id : string}
+}
+
+export type AddModalProps ={
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+export type FormDataProps ={
+    projectName :string;
+    image:string;
+    client:string,
 }

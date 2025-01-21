@@ -18,7 +18,7 @@ const useProjects = () => {
         };
 
         fetchData();
-    }, [projectsList])
+    }, [])
 
     return projectsList;
 };

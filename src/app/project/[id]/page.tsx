@@ -9,16 +9,15 @@ import projectImg2 from "../../../../public//Rectangle 6473.png";
 import projectImg3 from "../../../../public/Rectangle 6474.png";
 import arrowRight from "../../../../public/Arrow right.png";
 import arrowLeft from "../../../../public/Arrow left.png";
-import { ParamsProps, Projcet, } from "@/Types";
+import { Projcet, ProjcetDetailsProps, } from "@/Types";
 import OtherProjects from "@/app/components/OtherProjects/OtherProjects";
 
-interface ProjcetDetailsProps {
-    params: ParamsProps
-}
+
 
 const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
 
     const { id: projectId } = React.use(params);
+
     console.log( params)
 
     const [projectData, setProjectData] = useState<Projcet | null>(null);

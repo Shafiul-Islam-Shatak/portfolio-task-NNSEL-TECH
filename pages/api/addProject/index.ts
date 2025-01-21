@@ -3,18 +3,16 @@ import dbConnect from "@/utilits/db";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const projectId = req.query.projectId
     await dbConnect()
 
-    if (req.method === 'DELETE') {
+    if (req.method === 'POST') {
         try {
-            const project = await Project.findById(projectId)
-            const result = await Project.deleteOne(project)
-
-            res.status(200).json({ massage:'Project Deleted' , result})
+            const newProject = req.body
+            const result = await Project.create(newProject)
+            res.status(200).json({ massage: 'New Project Added', result })
         }
         catch (error) {
-            res.status(500).json({ massage: 'error to delete', error: error })
+            res.status(500).json({ massage: 'error to post in database', error: error })
         }
     }
     else {
