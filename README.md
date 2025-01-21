@@ -38,8 +38,10 @@ This project is a portfolio web application built using modern technologies. It 
    # or
    yarn install
    ```
+4. **Add .env file in the project directory (It wil be better if you use Own DB)**
+MONGODB_URI=mongodb+srv://NeedsCart:O8Kux5G6YZqIhDLI@cluster0.eugjqa9.mongodb.net/portfolioTask?retryWrites=true&w=majority
 
-4. **Start the Development Server**
+5. **Start the project localy**
    ```bash
    npm run dev
    # or
@@ -47,17 +49,8 @@ This project is a portfolio web application built using modern technologies. It 
    ```
    The application will be available at `http://localhost:3000`.
 
-5. **Build for Production (Optional)**
-   To build the application for production:
-   ```bash
-   npm run build
-   ```
 
-6. **Start the Production Server**
-   After building, run:
-   ```bash
-   npm start
-   ```
+
 
 ---
 
