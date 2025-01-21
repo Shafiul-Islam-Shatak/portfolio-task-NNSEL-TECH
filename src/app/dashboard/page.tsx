@@ -2,16 +2,24 @@
 import useProjects from "Hooks/ProjectData/useProjects";
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaPlus, FaTrash } from "react-icons/fa6";
-import { FaEdit } from "react-icons/fa";
+import { FaPlus, FaTrash, FaEdit } from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import AddModal from "../components/AddModal/AddModal";
+import EditModal from "../components/EditModal/EditModal";
+import { RingLoader } from "react-spinners";
 
 const Dashboard: React.FC = () => {
-    const projects = useProjects() || []; 
+    // load data from custom hooks
+    const projects = useProjects() || [];
+
+    // add project modal controll state
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+    // add project modal controll state and set edit iteam id
+    const [editId, setEditId] = useState<string>('');
+    const [isEditModalOpen, setIsEditModalOpen] = useState<boolean>(false);
 
     const handleDelete = async (id: string) => {
         Swal.fire({
@@ -26,33 +34,37 @@ const Dashboard: React.FC = () => {
             if (result.isConfirmed) {
                 try {
                     const res = await axios.delete(`/api/deleteProject/${id}`);
-                    if (res.data.message === "Project Deleted") {
-                        toast.success(res.data.message);
-                    } else {
-                        toast.error(res.data.message);
-                    }
+                    console.log(res.data)
+                    toast.success("Project Deleted");
+                   
                 } catch (err) {
-                    toast.error(err );
+                    console.log(err);
                 }
             }
         });
     };
-
+    // controll open and close the add project modal
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    // controll open and close the edit project modal
+    const openEditModal = () => setIsEditModalOpen(true);
+    const closeEditModal = () => setIsEditModalOpen(false);
+
     return (
         <div>
-            <div className="flex justify-between my-10 items-center w-full">
-                <h1 className="text-2xl font-bold">My Projects</h1>
+            <div className="flex flex-col md:flex-row justify-between my-10 items-center w-full">
+                <h1 className="text-2xl font-bold font-syne">My Projects</h1>
                 <button
                     onClick={openModal}
-                    className="flex items-center uppercase hover:bg-orange-500 justify-center space-x-2 bg-[#FF9142] text-white py-4 px-10 rounded-[30px]"
+                    className="flex items-center uppercase hover:bg-orange-500 justify-center space-x-2 bg-[#FF9142] text-white py-4 px-5 rounded-[30px]"
                 >
-                    <h1>Add Project</h1>
+                    <h1 className="font-rubik">Add Project</h1>
                     <FaPlus />
                 </button>
             </div>
+
+            {/* table of my existing project */}
             <table className="w-full text-left">
                 <thead>
                     <tr>
@@ -79,11 +91,17 @@ const Dashboard: React.FC = () => {
                                 <td>{project.title}</td>
                                 <td>{project.client}</td>
                                 <td className="flex flex-col md:flex-row items-center py-5 space-x-2">
-                                    <button onClick={() => handleDelete(project._id)}>
-                                        <FaTrash />
+                                    <button
+                                        onClick={() => handleDelete(project._id)}
+                                        className="hover:text-red-600"
+                                    >
+                                        <FaTrash className="hover:scale-125" />
                                     </button>
-                                    <button>
-                                        <FaEdit />
+                                    <button
+                                        onClick={() => { setEditId(project._id); openEditModal(); }}
+                                        className="mt-5 md:mt-0 hover:text-blue-600"
+                                    >
+                                        <FaEdit className="hover:scale-125" />
                                     </button>
                                 </td>
                             </tr>
@@ -91,7 +109,15 @@ const Dashboard: React.FC = () => {
                     ) : (
                         <tr>
                             <td colSpan={5} className="text-center py-5">
-                                No projects found.
+                                {projects.length === 0 ? (
+                                    <div>No Projects Found</div>
+                                ) :
+                                    (
+                                        //show the loading spinner
+                                        <div className="flex justify-center items-center">
+                                            <RingLoader color="#ffffff" />
+                                        </div>
+                                    )}
                             </td>
                         </tr>
                     )}
@@ -99,7 +125,16 @@ const Dashboard: React.FC = () => {
             </table>
 
             {/* Add Modal */}
-            <AddModal isOpen={isModalOpen} onClose={closeModal} />
+            <AddModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+            />
+            {/* Edit Modal */}
+            <EditModal
+                id={editId}
+                isOpen={isEditModalOpen}
+                onClose={closeEditModal}
+            />
         </div>
     );
 };

@@ -29,7 +29,8 @@ export type WorkCardProps = {
 
 export type Projcet = {
     title: string,
-    img: string
+    img: string,
+    client: string
 }
 
 
@@ -40,6 +41,11 @@ export type ProjcetDetailsProps= {
 export type AddModalProps ={
     isOpen: boolean;
     onClose: () => void;
+}
+export type EditModalProps ={
+    isOpen: boolean;
+    onClose: () => void;
+    id:string
 }
 
 export type FormDataProps ={

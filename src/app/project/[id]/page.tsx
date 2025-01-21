@@ -16,9 +16,9 @@ import OtherProjects from "@/app/components/OtherProjects/OtherProjects";
 
 const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
 
-    const { id: projectId } = React.use(params);
+    const projectId = params?.id
 
-    console.log( params)
+    console.log(params)
 
     const [projectData, setProjectData] = useState<Projcet | null>(null);
 
