@@ -22,7 +22,7 @@ const about = () => {
       </div>
 
       {/* image section */}
-      <div className='flex flex-col space-y-5 justify-center items-center lg:flex-row space-x-3  mt-[100px] mx-auto'>
+      <div className='flex flex-col space-y-5 justify-center items-center lg:flex-row space-x-3 mt-[100px] mx-auto px-5 xl:px-0'>
         <Image
           src={profileImage}
           
