@@ -53,7 +53,7 @@ const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
 
                     {/* text content */}
                     <div className="w-[65%] mx-auto">
-                        <h1 className="font-syne font-semibold text-4xl mt-[70px]">Project Story</h1>
+                        <h1 className="font-syne font-semibold text-4xl lg:mt-[70px] mt-20 ">Project Story</h1>
                         <p className="font-rubik text-[#9CA7B8] text-[16px] mt-[30px]">
                             The fact that photography has different meanings to different people is one of
                             the many components of its appeal. Photography is such an important part of our
@@ -66,11 +66,13 @@ const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-7 lg:grid-cols-2 mt-[88px]">
+                    <div className="grid  grid-cols-1 gap-7 lg:grid-cols-2 mt-[88px]">
                         <Image
+                        className="mx-auto"
                             src={projectImg2}
                             alt={projectData.title} />
                         <Image
+                        className="mx-auto"
                             src={projectImg3}
                             alt={projectData.title} />
                     </div>
@@ -85,7 +87,7 @@ const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
                         </p>
                     </div>
 
-                    <div className="flex justify-between items-center mt-[150px]">
+                    <div className="flex justify-between items-center mt-20 xl:px-0 px-5 lg:mt-[150px]">
                         {/* Prvious btn  */}
                         <button>
                             <div className="flex items-center  space-x-2">
@@ -94,13 +96,13 @@ const ProjectDetails: React.FC<ProjcetDetailsProps> = ({ params }) => {
                                     src={arrowLeft}
                                     alt="arrowLeft"
                                 />
-                                <h1 className="font-rubik text-[16px] uppercase font-bold">Previous work</h1>
+                                <h1 className="font-rubik text-[16px] uppercase font-bold hidden md:block">Previous work</h1>
                             </div>
                         </button>
                         {/* Next btn  */}
                         <button>
                             <div className="flex items-center  space-x-2">
-                                <h1 className="font-rubik text-[16px] uppercase font-bold">next work</h1>
+                                <h1 className="font-rubik text-[16px] uppercase font-bold hidden md:block">next work</h1>
                                 <Image
                                     className="mb-2"
                                     src={arrowRight}

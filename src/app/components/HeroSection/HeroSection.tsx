@@ -5,12 +5,12 @@ import profileImage from '../../../../public/assets/Rectangle 361.png'
 const HeroSection = () => {
 
     return (
-        <div className="w-full h-full rounded-md mt-[230px]">
+        <div className="w-full h-full rounded-md lg:mt-[230px] mt-32">
 
             {/* header */}
             <header className="flex lg:flex-row flex-col gap-[50px] lg:gap-0 items-center lg:mt-3">
-                <div className="px-8 mt-8 lg:mt-0 w-full lg:w-[50%] relative">
-                    <h1 className="text-[40px] lg:text-[56px] leading-[45px] lg:leading-[65px] font-semibold font-syne">Let’s get know<br></br>about me closer</h1>
+                <div className="px-8 w-3/4 mx-auto mt-8 lg:mt-0  lg:w-[50%] relative">
+                    <h1 className="text-[40px] md:text-5xl lg:text-[56px] leading-[45px] lg:leading-[65px] font-semibold font-syne">Let’s get know<br></br>about me closer</h1>
                     <p className="text-[18px] mt-[26px] font-rubik text-[#A8A8A8]">Aaronn is a New York-based visual designer focusing on branding and visual identity. Her portfolio showcases her wide range of work, spanning books, posters and web design.</p>
                     <div className='absolute  top-1/2 left-1/2 transform -translate-x-[140%] -translate-y-[120%]'>
                         <Image
@@ -29,7 +29,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* image */}
-                <div className="w-full lg:w-[50%]">
+                <div className="w-3/4 mx-auto lg:w-[50%]">
                     <Image
                         src={profileImage}
                         alt="profile-Image"

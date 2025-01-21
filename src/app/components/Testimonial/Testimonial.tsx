@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 const Testimonial = () => {
     return (
-        <div>
+        <div className='w-3/4 mx-auto xl:w-full '>
             <div className=" relative  flex justify-between items-center ">
-                <div className="mt-[166px]">
-                    <h1 className="text-7xl font-bold font-syne ">Testimonial</h1>
+                <div className="lg:mt-[166px] mt-32">
+                    <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold font-syne ">Testimonial</h1>
                     <div className='absolute  top-1/2 left-1/2 transform -translate-x-[140%] -translate-y-[60%]'>
                     <Image
                         src={cloudShadow}
@@ -22,7 +22,7 @@ const Testimonial = () => {
                     </div>
 
                 </div>
-                <h1 className="font-syne  text-[288px]  font-bold text-left -rotate-180 scale-y-[-1] text-black " style={{ WebkitTextStroke: '1px orange' }}>“</h1>
+                <h1 className="font-syne  text-[288px] hidden lg:block font-bold text-left -rotate-180 scale-y-[-1] text-black " style={{ WebkitTextStroke: '1px orange' }}>“</h1>
             </div>
 
         </div>

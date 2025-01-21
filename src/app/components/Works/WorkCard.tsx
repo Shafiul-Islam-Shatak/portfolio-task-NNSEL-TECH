@@ -4,8 +4,9 @@ import { WorkCardProps } from '@/Types';
 
 const WorkCard: React.FC<WorkCardProps> = ({ img, title, color }) => {
     return (
-        <div>
+        <div className='mx-auto'>
             <Image
+            className='flex justify-center items-center'
                 src={img}
                 alt={title}
                
