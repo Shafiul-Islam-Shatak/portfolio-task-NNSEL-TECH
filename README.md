@@ -88,6 +88,3 @@ Also used  APIs to handle CRUD operation by id
 ### 3. **PATCH `/api/projects/${id}`**
 
 
-### YOU will get a UI like this PDF
-[PDF](https://drive.google.com/file/d/1S8uLYbyNZJz1MQxnlkRHTZHn_AYdH4zo/view?usp=sharing)
-
